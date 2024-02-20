@@ -41,3 +41,10 @@ div{
     top: 270px; 
      left: 50%;
  }
+/* Estilos específicos para el div creado dinámicamente */
+.dynamic-div {
+    background-color: lightblue;
+    border: 2px solid black;
+    padding: 10px;
+    margin-bottom: 10px;
+}

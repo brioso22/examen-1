@@ -1,21 +1,16 @@
-// Función para agregar un nuevo elemento div cuando el mouse se encuentra sobre el div "title"
-document.getElementById('title').addEventListener('mouseover', function() {
+document.getElementById('other').addEventListener('click', function() {
+    const descripcionDiv = document.getElementById('descipcion'); // Corregido a 'descipcion'
+    descripcionDiv.style.width = '150px';
+    descripcionDiv.style.height = '300px';
+
+    // Crear un nuevo div
     const newDiv = document.createElement('div');
-    newDiv.textContent = 'Este es un nuevo div agregado dinámicamente';
-    document.body.appendChild(newDiv);
-});
+    newDiv.textContent = 'Nuevo contenido agregado dinámicamente al div "other"';
 
-// Función para mover el div de descripción antes del div "other" cuando el mouse se encuentra sobre el div "descripcion"
-document.getElementById('descripcion').addEventListener('mouseover', function() {
-    const descripcionDiv = document.getElementById('descripcion');
+    // Agregar el nuevo div al final del div "other"
+    document.getElementById('other').appendChild(newDiv);
+
+    // Mueve el div de descripción antes del div "other"
     const otherDiv = document.getElementById('other');
-    document.body.insertBefore(descripcionDiv, otherDiv);
-});
-
-// Función para agregar un nuevo elemento al final del div "centro" cuando el mouse se encuentra sobre el div "box"
-document.getElementById('box').addEventListener('mouseover', function() {
-    const centroDiv = document.getElementById('centro');
-    const newElement = document.createElement('p');
-    newElement.textContent = 'Contenido agregado dinámicamente al div "centro"';
-    centroDiv.append(newElement);
+    otherDiv.parentNode.insertBefore(descripcionDiv, otherDiv);
 });
